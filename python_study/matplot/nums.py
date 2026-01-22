@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 # # задание 1
 # a = np.arange(0, 10)
@@ -101,6 +102,7 @@ anomaly2 = np.abs(norm2)>2
 print(anomaly2)
 common_anomaly = anomaly1 & anomaly2
 common_anomaly
+
 
 
 
