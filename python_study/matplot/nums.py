@@ -74,18 +74,33 @@ import numpy as np
 # print("Обратная матрица A^-1 =", invA)
 # print("Собственные значения Eigenvalues:", eigenvals)
 
+
 # задание 6
 g = np.array([3.2, 7.1, np.nan, 5.5, np.nan, 2.2])
 middle = np.nanmean(g)
 num = np.nan_to_num(middle)
-
-
-
-
-
 print(middle)
 
 
+# Анализ температурных аномалий
+city1 = np.random.randint(-30, 30, size=365).astype(float) # генерация рандома
+city2 = np.random.randint(-30, 30, size=365).astype(float) # генерация рандома
+num_anomaly = 17
+anom_days_1 = np.random.choice([-35, -40, 50, 80], size=num_anomaly)
+anom_days_2 = np.random.choice([-35, -40, 50, 80], size=num_anomaly)
+
+mean1, std1 = np.mean(city1), np.std(city1)
+mean2, std2 = np.mean(city2), np.std(city2)
+
+norm1 = (city1-mean1)/std1
+norm2 = (city2-mean2)/std2
+
+anomaly1 = np.abs(norm1)>2
+print(anomaly1)
+anomaly2 = np.abs(norm2)>2
+print(anomaly2)
+common_anomaly = anomaly1 & anomaly2
+common_anomaly
 
 
 
